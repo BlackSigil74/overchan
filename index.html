@@ -10,24 +10,6 @@ a.xl { font-size: x-large }
 a.l { font-size: large }
 a.s { font-size: small }
 a.xs { font-size: x-small }
-#iframe_container {
-    position: fixed;
-    bottom: 20px; /* Ubicado 20px desde la parte inferior */
-    right: 20px; /* Ubicado 20px desde la parte derecha */
-    width: 250px; /* Ajusta el ancho a un tamaño más pequeño */
-    height: 300px; /* Ajusta la altura a un tamaño más pequeño */
-    z-index: 1000; /* Asegura que el iframe esté por encima de otros elementos */
-    border: 2px solid #003400; /* Borde alrededor del iframe */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-#iframe_container iframe {
-    width: 100%;
-    height: 100%;
-    border: none; /* Elimina el borde del iframe */
-    border-radius: 8px; /* Bordes redondeados dentro del iframe */
-}
-
 </style>
 </head>
 <body>
@@ -132,7 +114,7 @@ a.xs { font-size: x-small }
 
 
 <h2 id="other">Other Language Boards</h2>
-<p>Sorted by language. Asian boards are not on this list, but you can browse <a href="c/index.html">an English directory for Futaba</a>.
+<p>Sorted by language. Asian boards are not on this list, but you can browse <a href="http://www.bluethree.us/futaba/">an English directory for Futaba</a>.
 <table border="1">
 <tr><th>Board Name</th><th>Language</th><th>Imageboard Topics</th><th>Discussion Topics</th></tr>
 
@@ -229,53 +211,7 @@ The following boards are either currently unused, or were fragged by Something A
 <tr><td><a href="http://www.maeboard.net/" target="_blank">MAEboard</a></td><td>Hardcore geek photos</td></tr>
 </table>
 <p> -->
-<p><i>This page was last updated 13 November 2024. Site maintained by Nich. (Remember that this is a modification of the original files, and some things may not be as they were before).</i>
-
-<div id="iframe_container">
-    <iframe src="https://iframe.chat/embed/index.html?chat=84694047" id="chattable"></iframe>
-</div>
-
-
-<script src="https://chattable.neocities.org/scripts/main.min.js"></script>
-<script>
-	chattable.initialize({
-		stylesheet : "style.css",
-	});
-
-
-
-
-const iframeContainer = document.getElementById('iframe_container');
-let isDragging = false;
-let offsetX, offsetY;
-
-// Inicia el movimiento
-iframeContainer.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - iframeContainer.getBoundingClientRect().left;
-    offsetY = e.clientY - iframeContainer.getBoundingClientRect().top;
-    iframeContainer.style.cursor = 'grabbing'; // Cambio de cursor durante el arrastre
-});
-
-// Mueve el iframe
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        iframeContainer.style.left = `${e.clientX - offsetX}px`;
-        iframeContainer.style.top = `${e.clientY - offsetY}px`;
-    }
-});
-
-// Detiene el movimiento
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    iframeContainer.style.cursor = 'move'; // Restablece el cursor al soltar
-});
-
-
-
-
-
-</script>
+<p><i>This page was last updated 13 November 2024. Site maintained by Nich.</i>
 
 
 </body></html>
