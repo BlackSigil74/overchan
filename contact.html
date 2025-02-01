@@ -1,163 +1,329 @@
 <html><head>
+
 <title>OverKob - О нас</title>
+
 <link rel="icon" href="icon.png">
+
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+
     <style>
+
         .fade-out {
+
             opacity: 0;
+
         }
+
         .fade-in {
+
             opacity: 1
+
         }
+
         /* Пастельно-розовый стиль */
+
         .pink-theme {
+
             font-family: sans-serif;
+
             background: #f8d3e0;
+
             color: #4a1c2e;
+
         }
+
         .pink-theme h1 {
+
             font-variant: small-caps;
+
             color: #d5006d;
+
         }
+
         .pink-theme a {
+
             color: #ff6f91;
+
         }
+
         .pink-theme a:visited {
+
             color: #c2185b;
+
         }
+
         .pink-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #d5006d;
+
         }
+
+
 
         /* Нежный желтый стиль */
+
         .yellow-theme {
+
             font-family: sans-serif;
+
             background: #fff9e6;
+
             color: #4a3c00;
+
         }
+
         .yellow-theme h1 {
+
             font-variant: small-caps;
+
             color: #f9c74f;
+
         }
+
         .yellow-theme a {
+
             color: #8a6d00;
+
         }
+
         .yellow-theme a:visited {
+
             color: #7a5e00;
+
         }
+
         .yellow-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #f9c74f;
+
          }
+
         
+
         /* Пастельно-зеленая тема */
+
         .green-theme {
+
         font-family: Arial, sans-serif;
+
         background: #e6f9e6; /* Пастельно-зеленый фон */
+
         color: #2e4a2e; /* Темно-зеленый цвет текста */
+
         }
+
         .green-theme h1 {
+
         font-variant: small-caps;
+
         color: #4caf50; /* Ярко-зеленый цвет заголовка */
+
         }
+
         .green-theme a {
+
             color: #388e3c; /* Зеленый цвет обычных ссылок */
+
             }
+
         .green-theme a:visited {
+
             color: #2e7d32;
+
             }
+
         .green-theme a:hover {
+
             color: #66bb6a;
+
             }   
+
         .green-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #4caf50;
+
         }
+
         .link-container {
+
             display: flex;
+
             justify-content: center;
+
             padding: 10px
+
         }
+
         .link-container a 
+
         {
+
             margin: 0 10px; /* Отступы между ссылками */
+
             text-decoration: none; /* Убираем подчеркивание */                    
+
 </style>
+
 </head>
+
 <body class="pink-theme"> <!-- Начальный стиль -->
+
     <label for="theme-select">Выберите тему:</label>
+
     <select id="theme-select" onchange="changeTheme(this.value)">
+
         <option value="pink">Пастельно-розовый</option>
+
         <option value="yellow">Нежный желтый</option>
+
         <option value="green">Зелёный</option>
+
     </select>
+
     
-    <script>
-        window.onload = function() {
-            document.body.classList.add('fade-in');
-        };
-    </script>
 
     <script>
-        function changeTheme(theme) {
-            const body = document.body;
-            if (theme === 'green') {
-                body.className = 'green-theme';
-            } else if (theme === 'yellow') {
-                body.className = 'yellow-theme';
-            } else if (theme === 'pink')
-                body.className = 'pink-theme'
-            localStorage.setItem('theme', theme);
-        }
+
         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                changeTheme(savedTheme);
-                document.getElementById('theme-select').value = savedTheme; 
-            } else {
-                changeTheme('pink');
-            }
-        };        
+
+            document.body.classList.add('fade-in');
+
+        };
+
     </script>
-    
+
+
+
     <script>
+
+        function changeTheme(theme) {
+
+            const body = document.body;
+
+            if (theme === 'green') {
+
+                body.className = 'green-theme';
+
+            } else if (theme === 'yellow') {
+
+                body.className = 'yellow-theme';
+
+            } else if (theme === 'pink')
+
+                body.className = 'pink-theme'
+
+            localStorage.setItem('theme', theme);
+
+        }
+
+        window.onload = function() {
+
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme) {
+
+                changeTheme(savedTheme);
+
+                document.getElementById('theme-select').value = savedTheme; 
+
+            } else {
+
+                changeTheme('pink');
+
+            }
+
+        };        
+
+    </script>
+
+    
+
+    <script>
+
         const links = document.querySelectorAll('.link');
+
         links.forEach(link => {
+
             link.addEventListener('click', function(event) {
+
                 event.preventDefault();
+
                 const href = this.getAttribute('href');
+
                 document.body.classList.add('fade-out');
 
+
+
                 setTimeout(() => {
+
                     window.location.href = href;
+
                 }, 500); 
+
             });
+
         });
+
     </script>
+
     <div class="link-container"> 
+
         <a href="index.html">Главная</a> 
+
         <a href="chans.html">Упрощённая версия</a> 
+
         <a href="about.html">О нас</a> 
+
         <a href="contact.html">Контакты</a> 
+
         </div>
+
         
-</body><img style="float:right" src="logo.png">
+
+</body>
+
+<img style="float:right" src="logo.png">
+
 <h1>OverKob</h1>
-<p>Почта: временно отсутствует</p>
-<p>Телеграмм: временно отсутствует</p>
+
+<p>Почта: <a href="mailto:kobchan@proton.me">kobchan@proton.me</a></p>
+
+<p>Телеграмм: <a href="https://t.me/OverKob">@OverKob</a></p>
+
 <p>Тред на КобЧане:<a href="http://kobchan.nya.pub/d/post.php?id=5&">*клик*</a> </p>
+
 <hr>
 
+
+
 <h2 id="glossary">Политика работы сайта</h2>
+
 Перед использованием сайта, просьба учесть, что:
+
 <ul><li>Администрация не несёт ответственности за материалы, которые вы можете увидеть посредством внешних ссылок.
+
 <li>Будучи всего лишь навигационным порталом, «ОверКоб» никоим образом не связан с создателями ресурсов, ссылки на которые содержатся на сайте.
+
 </ul>
+
 <hr>
+
 <p>
-<p><i>Последняя редакция была проведена 27 Января 2025 года.</i>
-</body></html>
+
+<p><i>Последняя редакция была проведена 1 Февраля 2025 года.</i>
+
+</body>
+
+</html>
