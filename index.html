@@ -1,198 +1,406 @@
 <html><head>
-<title>OverKob - навигатор сайтов</title>
+
+<title>OverKob - Навигатор сайтов</title>
+
 <link rel="icon" href="icon.png">
+
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+
     <style>
+
         .fade-out {
+
             opacity: 0;
+
         }
+
         .fade-in {
+
             opacity: 1
+
         }
+
         /* Пастельно-розовый стиль */
+
         .pink-theme {
+
             font-family: sans-serif;
+
             background: #f8d3e0;
+
             color: #4a1c2e;
+
         }
+
         .pink-theme h1 {
+
             font-variant: small-caps;
+
             color: #d5006d;
+
         }
+
         .pink-theme a {
+
             color: #ff6f91;
+
         }
+
         .pink-theme a:visited {
+
             color: #c2185b;
+
         }
+
         .pink-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #d5006d;
+
         }
+
+
 
         /* Нежный желтый стиль */
+
         .yellow-theme {
+
             font-family: sans-serif;
+
             background: #fff9e6;
+
             color: #4a3c00;
+
         }
+
         .yellow-theme h1 {
+
             font-variant: small-caps;
+
             color: #f9c74f;
+
         }
+
         .yellow-theme a {
+
             color: #8a6d00;
+
         }
+
         .yellow-theme a:visited {
+
             color: #7a5e00;
+
         }
+
         .yellow-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #f9c74f;
+
          }
+
         
+
         /* Пастельно-зеленая тема */
+
         .green-theme {
+
         font-family: Arial, sans-serif;
+
         background: #e6f9e6; /* Пастельно-зеленый фон */
+
         color: #2e4a2e; /* Темно-зеленый цвет текста */
+
         }
+
         .green-theme h1 {
+
         font-variant: small-caps;
+
         color: #4caf50; /* Ярко-зеленый цвет заголовка */
+
         }
+
         .green-theme a {
+
             color: #388e3c; /* Зеленый цвет обычных ссылок */
+
             }
+
         .green-theme a:visited {
+
             color: #2e7d32;
+
             }
+
         .green-theme a:hover {
+
             color: #66bb6a;
+
             }   
+
         .green-theme hr {
+
             border: none;
+
             height: 2px;
+
             background-color: #4caf50;
+
         }
+
         .link-container {
+
             display: flex;
+
             justify-content: center;
+
             padding: 10px
+
         }
+
         .link-container a 
+
         {
+
             margin: 0 10px; /* Отступы между ссылками */
+
             text-decoration: none; /* Убираем подчеркивание */                    
+
 </style>
+
 </head>
+
 <body class="pink-theme"> <!-- Начальный стиль -->
+
     <label for="theme-select">Выберите тему:</label>
+
     <select id="theme-select" onchange="changeTheme(this.value)">
+
         <option value="pink">Пастельно-розовый</option>
+
         <option value="yellow">Нежный желтый</option>
+
         <option value="green">Зелёный</option>
+
     </select>
+
     
-    <script>
-        window.onload = function() {
-            document.body.classList.add('fade-in');
-        };
-    </script>
 
     <script>
-        function changeTheme(theme) {
-            const body = document.body;
-            if (theme === 'green') {
-                body.className = 'green-theme';
-            } else if (theme === 'yellow') {
-                body.className = 'yellow-theme';
-            } else if (theme === 'pink')
-                body.className = 'pink-theme'
-            localStorage.setItem('theme', theme);
-        }
+
         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                changeTheme(savedTheme);
-                document.getElementById('theme-select').value = savedTheme; 
-            } else {
-                changeTheme('pink');
-            }
-        };        
+
+            document.body.classList.add('fade-in');
+
+        };
+
     </script>
-    
+
+
+
     <script>
+
+        function changeTheme(theme) {
+
+            const body = document.body;
+
+            if (theme === 'green') {
+
+                body.className = 'green-theme';
+
+            } else if (theme === 'yellow') {
+
+                body.className = 'yellow-theme';
+
+            } else if (theme === 'pink')
+
+                body.className = 'pink-theme'
+
+            localStorage.setItem('theme', theme);
+
+        }
+
+        window.onload = function() {
+
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme) {
+
+                changeTheme(savedTheme);
+
+                document.getElementById('theme-select').value = savedTheme; 
+
+            } else {
+
+                changeTheme('pink');
+
+            }
+
+        };        
+
+    </script>
+
+    
+
+    <script>
+
         const links = document.querySelectorAll('.link');
+
         links.forEach(link => {
+
             link.addEventListener('click', function(event) {
+
                 event.preventDefault();
+
                 const href = this.getAttribute('href');
+
                 document.body.classList.add('fade-out');
 
+
+
                 setTimeout(() => {
+
                     window.location.href = href;
+
                 }, 500); 
+
             });
+
         });
+
     </script>
+
     <div class="link-container"> 
+
         <a href="index.html">Главная</a> 
+
         <a href="chans.html">Упрощённая версия</a> 
+
         <a href="about.html">О нас</a> 
+
         <a href="contact.html">Контакты</a>  
+
         </div>
+
         
-</body><img style="float:right" src="logo.png">
+
+</body>
+
+<img style="float:right" src="logo.png">
+
 <h1>OverKob</h1>
+
 <p>ОверКоб является очередным ОверЧаном русского происхождения.</p>
+
 <p>Наша цель - создать сеть сайтов анонимного и безопасного пользования, где пользователи смогут использовать ресурсы и получать информацию не боясь блокировок, спам-ботов, слива их информации или слежек.</p>
+
 <p>Помимо борд, мы принимаем и другие виды сайтов.</p>
+
 <p>Сайты должны быть:</p>
+
 <ol>
+
 <li>Анонимными (касаемо использования пользователем)</li>
+
 <li>Независимым от более крупных сервисов</li>
+
 <li>Не следить за пользователями (в рамках разумного)</li>
+
 </ol>
 
+
+
 <p>Сайт является форком <a href="https://github.com/lx2l/overchan">OverChan от Nich</a> (он же lx2l)  </p>
+
 <p>Наш же репозиторий находится<a href="https://github.com/BlackSigil74/overchan/">здесь.</a></p>
+
 <hr>
+
+
 
 <div style="float:right; padding: 0.5em; font-size: x-large"><img src="other.png"> <a href="index.html#other">Другие сайты</a></div>
+
 <h2 id="imageboards">Борды/Боору</h2>
+
 <p>
+
 <table border="1"><tr><th>Название</th><th>Описание </th><th>Примечание </th></tr>
 
+
+
 <tr><td><a href="http://kobchan.nya.pub/" target="_blank">КобЧан</a></td><td>Анонимная имиджборда с хостингом из Tor.</td><td>DeltaChan 1.5.1, зеркало Tor.</td></tr>
+
 <tr><td><a href="http://deltachan.atwebpages.com/" target="_blank">DeltaChan</a></td><td>Официальный инстанс DeltaChan, основной язык Английский.</td><td>DeltaChan 1.5, English</td></tr>
+
+<tr><td><a href="https://flchan.prtcl.icu/" target="_blank">FLChan</a></td><td>Борда на упрощённом движке. С недавнего времени автономен.</td><td>Open1ch</td></tr>
+
+<tr><td><a href="https://o1ch.one-connect.ru/" target="_blank">OpenOne</a></td><td>Борда с самописным упрощённым движком</td><td>Open1ch</td></tr>
+
 </table>
+
 <hr>
+
+
+
 
 
 <h2 id="other">Другое</h2>
+
 <p>Здесь находятся сайты не подходящие под категорию имиджбордов или боору.</p>.
+
 <table border="1">
+
 <tr><th>Название</th><th>Описание</th><th>Примечание</th></tr>
 
 
+
+
+
 <tr><td><a href="http://vital-abyss.webnode.ru/" target="_blank">Vital Abyss</a></td><td>Официальный сайт игры Vital Abyss</td><td>Blender, BGE</td></tr>
+
 <tr><td><a href="https://felixfester.codeberg.page" target="_blank">Felix Fester</a></td><td>Личный сайт Феликса Фестера</td><td>Статичный сайт, CodeBerg</td></tr>
+
 <tr><td><a href="http://slimopedia.webnode.ru" target="_blank">Слаймопедия</a></td><td>Энциклопедия о под-виде Слаймов-Ардобных.</td><td>Статичный сайт</td></tr>
-<tr><td><a href="http://sites.google.com/view/olandwiki/mainpage" target="_blank">OlandWiki</a></td><td>Вики Gmod сервера Oland.</td><td>Статичный сайт, использует Google Sites в качестве хоста.</td></tr>
-<tr><td><a href="http://l4iryn.neocities.org/" target="_blank">ЛЧЫРУН</a></td><td>Личный сайт ЛЧЫРУНа</td><td>Статичный сайт, NeoCities</td></tr>
-<tr><td><a href="http://overbottom.neocities.org/" target="_blank">OverBottom</a></td><td>Личный архив СВЕРХДНО</td><td>Статичный сайт, NeoCities</td></tr>
+
+<tr><td><a href="https://sites.google.com/view/olandwiki/mainpage" target="_blank">OlandWiki</a></td><td>Вики Gmod сервера Oland.</td><td>Статичный сайт, использует Google Sites в качестве хоста.</td></tr>
+
+<tr><td><a href="https://l4iryn.neocities.org/" target="_blank">ЛЧЫРУН</a></td><td>Личный сайт ЛЧЫРУНа</td><td>Статичный сайт, NeoCities</td></tr>
+
+<tr><td><a href="https://overbottom.neocities.org/" target="_blank">OverBottom</a></td><td>Личный архив СВЕРХДНО</td><td>Статичный сайт, NeoCities</td></tr>
+
+<tr><td><a href="http://zenusus.github.io" target="_blank">Zenusus</a></td><td>Личный сайт Zenusus</td><td>Статичный сайт, GitHub, в разработке</td></tr>
+
+<tr><td><a href="https://mcrstr.neocities.org/" target="_blank">MCRSTR</a></td><td>Сайт-архив Фёдора Мельникова</td><td>Статичный сайт, NeoCities</td></tr>
+
 </table>
+
 <hr>
 
+
+
 <h2 id="glossary">Политика работы сайта</h2>
+
 Перед использованием сайта, просьба учесть, что:
+
 <ul><li>Администрация не несёт ответственности за материалы, которые вы можете увидеть посредством внешних ссылок.
+
 <li>Будучи всего лишь навигационным порталом, «ОверКоб» никоим образом не связан с создателями ресурсов, ссылки на которые содержатся на сайте.
+
 </ul>
+
 <hr>
-<p>
-<p><i>Последняя редакция была проведена 27 Января 2025 года.</i>
-</body></html>
+
+<p><i>Последняя редакция была проведена 1 Февраля 2025 года.</i></p>
+
+</body>
+
+</html>
+
