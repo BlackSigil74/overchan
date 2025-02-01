@@ -1,122 +1,252 @@
 <!DOCTYPE html>
+
 <html lang="ru">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>:-)</title>
+
     
+
     <style>
+
         body {
+
             margin: 0;
+
             height: 100vh;
+
             display: flex;
+
             justify-content: center;  /* Centra el contenido horizontalmente */
+
             align-items: flex-start;  /* Alinea el contenido hacia la parte superior */
+
             background: linear-gradient(to bottom, #99CC67, white);
+
             font-family: Arial, sans-serif;
+
             color: #000;
+
             padding-top: 30px;  /* Espacio desde la parte superior */
+
         }
+
+
 
         .window {
+
             width: 320px;
+
             border: 2px solid #046305;
+
             background-color: #F6F7E7;
+
             padding: 0;  /* Elimina el padding para que el title-bar esté pegado arriba */
+
         }
+
+
 
         .title-bar {
+
             background-color: #99CC67;
+
             color: #076300;
+
             padding: 2px 8px;
+
             font-size: 14px;
+
             font-weight: bold;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             width: 100%;  /* Asegura que el title-bar tenga el mismo ancho que el window */
+
             box-sizing: border-box;  /* Asegura que el padding no afecte el ancho total */
+
         }
+
+
 
         .close-button {
+
             background-color: #99CC67;
+
             color: #076300;
+
             width: 20px;
+
             height: 20px;
+
             text-align: center;
+
             line-height: 20px;
+
             cursor: pointer;
+
         }
+
+
 
         .content {
+
             padding: 20px;
+
             border-top: 2px solid #99CC67;
+
         }
+
+
 
         h1 {
+
             font-size: 18px;
+
             margin-top: 0;
+
         }
+
+
 
         p {
+
             font-size: 14px;
+
         }
+
+
 
         .boards {
+
             margin-top: 20px;
+
         }
+
+
 
         .board-item {
+
             display: block;
+
             margin: 5px 0;
+
             font-size: 14px;
+
             text-decoration: none;
+
             color: #000;
+
             background-color: #EBECD9;
+
             padding: 10px;
+
             border: 2px solid #046305;
+
             border-radius: 3px;
+
             font-family: Arial, sans-serif;
+
             box-shadow: 2px 2px 0 #046305;
+
             transition: background-color 0.3s, box-shadow 0.3s;
+
         }
 
+
+
         .board-item:hover {
+
             background-color: #b0b0b0;
+
             box-shadow: 4px 4px 0 #000;
+
         }
+
     </style>
+
 </head>
+
 <body>
+
     <div class="window">
+
         <div class="title-bar">
+
             <span>Chan Browser</span>
+
             <div class="close-button">X</div>
+
         </div>
+
         <div class="content">
+
             <h1 style="color: #076300;">Упрощённая версия</h1>
+
             <div id="ft">
+
                 <h4>Борды</h4>
+
                 <ul>
+
                     <li class="first"><a href="http://kobchan.nya.pub">КобЧан</a></li>
+
                     <li><a href="http://deltachan.atwebpages.com/">DeltaChan</a></li>
+
+                    <li><a href="https://flchan.prtcl.uci/">FLChan</a></li>
+
+                    <li><a href="https://o1ch.one-connect.ru">O1Ch</a></li>
+
                 </ul>
+
                 <h4>Другое</h4>
+
                 <ul>
+
                     <li><a href="http://vital-abyss.webnode.ru/">Vital Abyss</a></li>
+
                     <li><a href="https://felixfester.codeberg.page/">Felix Fester</a></li>
+
                     <li><a href="http://slimopedia.webnode.ru/">Слаймопедия</a></li>
+
                     <li><a href="https://sites.google.com/view/olandwiki/mainpage">OlandWiki</a></li>
+
                     <li><a href="https://l4iryn.neocities.org/">ЛЧЫРУН</a></li>
-                    <li><a href="https://overbottom.neocities.org/">OverBottom</a></a></li>
+
+                    <li><a href="https://overbottom.neocities.org/">OverBottom</a></li>
+
+                    <li><a href="http://zenusus.github.io">Zenusus</a></li>
+
+                    <li><a href="https://mcrstr.neocities.org/">MCRSTR</a></li>
+
                 </ul>
+
                 <br class="clear-bug" />
+
                 <div id="copyright">
+
                     <a href="index.html">Главная</a> &bull; <a href="contact.html">Контакты</a> 
+
                     
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </body>
+
 </html>
+
